@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--Metas-->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SignUp</title>
+	<meta name="description" content="SignUp">
+  <link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+	<header>
+        <div site>
+			<nav class="site-nav"> 
+					<ul class="group">
+						<li><a href="/">Home</a></li>
+						<li><a href="login">Login</a></li>
+                        <li><a href="signup">signup</a></li>						
+						<li><a href="admin.html">Admin</a></li>
+					</ul>
+			</nav>
+
+			</div>
+	</header>
+	<div class = "container">
+		<div class = "row">
+			<div class = "col-md-3">
+			</div>
+			<div id="signup" class = "col-md-6"></br>
+            <h1> SignUp</h1>
+				<form action="/signup" method="post">
+					<fieldset>
+						<div class="form-group">
+                            <h2>Create a new account</h2>
+                            <label for="">First Name</label>
+							<input type="text" id="firstName" class="form-control" placeholder="First Name" required autocomplete="off"></br>
+                            <label for="">Surname</label>
+                            <input type="text" id="lastName" class="form-control" placeholder="Surname" required autocomplete="off"></br>
+                            <label for="">Email address</label>
+                            <input type="text" id="email" class="form-control" placeholder="Email address" required autocomplete="off"></br>
+                            <label for="">New Password</label>
+                            <input type="password" id="password" class="form-control" placeholder="New Password" required autocomplete="off"></br>
+                            <label for="">Retype Password</label>
+                            <input type="retypePassword" id="retypepassword" class="form-control" placeholder="Retype Password" required autocomplete="off"></br>
+                            <label for="">Birthday</label></br>
+                            <select name="Day">
+                            <option value="1">1</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            </select>
+                            <select name="Month">
+                            <option value="Jan">Jan</option>
+                            <option value="Feb">Feb</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            </select>
+                            <select name="year">
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                            <option value="2015">2015</option>
+                            <option value="2014">2014</option>
+							</br>
+                            <label for="">Gender</label>
+                            <input type="radio" name="gender" value="female" checked> Female
+                            <input type="radio" name="gender" value="male" checked> Male
+						</div>
+						<button onclick="createAccount" class="btn btn-primary btn-lg">Create Account</button>
+					</fieldset>
+				</form>
+			</div>
+			<div class = "col-md-3">
+			</div>
+		</div>
+	</div>
+<script src="js/salary_calculator.js"></script>
+</body>
+
+</html>

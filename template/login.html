@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--Metas-->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login</title>
+	<meta name="description" content="Login">
+  <link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+	
+	<div class = "container">
+		<div class = "row">
+			<div class = "col-md-4">
+			</div>
+			<div id="login" class = "col-md-4"></br>
+			<h1> Login</h1>
+				<form action="/login" method="post">
+					<fieldset>
+						<div class="form-group">
+							<label for=""><h3>Email</h3></label>
+							<input type="text" id ="email" class= "form-control"placeholder="email" required autocomplete="off">
+							<label for=""><h3>Password</h3></label>
+							<input type="password" id="password" class= "form-control" placeholder="password" required autocomplete="off">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Remember me
+                                </label>
+                            </div>
+
+						</div>
+						<button onclick="login" class="btn btn-primary btn-lg btn-block">Submit</button>
+					</fieldset>
+				</form>
+			</div>
+			<div class = "col-md-4">
+			</div>
+		</div>
+	</div>
+<script src="js/salary_calculator.js"></script>
+</body>
+
+</html>
