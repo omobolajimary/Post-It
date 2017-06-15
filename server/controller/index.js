@@ -1,5 +1,9 @@
 const user = require('./user');
 
-module.exports = {
-  user,
-};
+router.post('/users', function(req, res) {
+  models.User.create({
+    email: req.body.email
+  }).then(function(user) {
+    res.json(user);
+  });
+});
