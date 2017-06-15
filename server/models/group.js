@@ -1,8 +1,18 @@
 'use strict';
-module.exports = function(sequelize, DataTypes) {
-  var group = sequelize.define('group', {
-    userId: DataTypes.STRING,
-    groupName: DataTypes.STRING
+module.exports = (sequelize, DataTypes) => {
+  let group = sequelize.define('group', {
+    groupId:{
+    type: DataTypes.INTEGER,
+    allowNull:false,
+    },
+    groupName: {
+    type:DataTypes.STRING,
+    allowNull:false,
+    },
+    messageId: {
+    type:DataTypes.INTEGER,
+    allowNull:false,
+    },
   }, {
     classMethods: {
       associate: function(models) {

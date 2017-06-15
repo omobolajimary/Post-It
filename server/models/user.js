@@ -1,8 +1,17 @@
 module.exports = (sequelize, DataTypes) => {
   let User = sequelize.define('User', {
-    userName: DataTypes.STRING,
-    email:DataTypes.STRING,
-    Password: DataTypes.STRING
+    userName: {
+    type:DataTypes.STRING,
+    allowNull:false,
+    },
+    email:{
+    type:DataTypes.STRING,
+    allowNull:false,
+    },
+    Password: {
+    type:DataTypes.STRING,
+    allowNull:false,
+    },
   }, {
     classMethods: {
     // associations can be defined here
