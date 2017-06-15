@@ -1,8 +1,8 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var message = sequelize.define('message', {
+  var messages = sequelize.define('messages', {
     groupId: DataTypes.INTEGER,
-    message: DataTypes.STRING
+    messages: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {
@@ -10,5 +10,5 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
-  return message;
+  return messages;
 };

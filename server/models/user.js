@@ -1,6 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
   let User = sequelize.define('User', {
-    userName: DataTypes.STRINGEMAIL,
+    userName: DataTypes.STRING,
+    email:DataTypes.STRING,
     Password: DataTypes.STRING
   }, {
     classMethods: {
