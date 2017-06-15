@@ -4,9 +4,9 @@ const bodyParser = require('body-parser');
 const path = require('path');
 // Set up the express app
 const app = express();
-var index = require('./routes/index');
-var users = require('./routes/users');
-var catalog = require('./routes/postIt');  //Import routes for "catalog" area of site
+var index = require('./server/routes/index');
+var users = require('./server/routes/users');
+var postIt = require('./server/routes/postIt');  //Import routes for "catalog" area of site
 // Log requests to the console.
 app.use(logger('dev'));
 
@@ -17,7 +17,7 @@ app.set('template', path.join(__dirname, 'template'));
 app.use(express.static('static'));
 app.use('/', index);
 app.use('/users', users);
-app.use('/catalog', postIt); 
+app.use('/postIt', postIt); 
 
 
 // Setup a default catch-all route that sends back a welcome message in JSON format.

@@ -1,6 +1,6 @@
 
 module.exports = (sequelize, DataTypes) =>{
-  var user = sequelize.define('user', {
+  const User = sequelize.define('User', {
     firstName: DataTypes.STRING,
     allowNull:false,
     },{
@@ -12,14 +12,18 @@ module.exports = (sequelize, DataTypes) =>{
     classMethods: {
       associate: (models)=> {
         // associations can be defined here
-        user.hasMany(models.messages, {
+        User.hasMany(models.messages, {
           foreignKey: "userId",
           onDelete: 'CASCADE',
         })
+        User.hasMany(models.Group_user,{
+          foreignKey: "userId",
+          onDelete: 'CASCADE',
+        });
       }
     }
   });
-   var user = sequelize.define('user', {
+   User = sequelize.define('User', {
     surName: DataTypes.STRING
   }, {
     classMethods: {
@@ -28,7 +32,7 @@ module.exports = (sequelize, DataTypes) =>{
       }
     }
   });
-   var user = sequelize.define('user', {
+  User = sequelize.define('User', {
     userName: DataTypes.STRING
   }, {
     classMethods: {
@@ -37,7 +41,7 @@ module.exports = (sequelize, DataTypes) =>{
       }
     }
   });
-   var user = sequelize.define('user', {
+   User = sequelize.define('User', {
     password: DataTypes.STRING
   }, {
     classMethods: {
@@ -46,7 +50,7 @@ module.exports = (sequelize, DataTypes) =>{
       }
     }
   });
-   var user = sequelize.define('user', {
+   User = sequelize.define('User', {
     email: DataTypes.STRING
   }, {
     classMethods: {
@@ -55,5 +59,5 @@ module.exports = (sequelize, DataTypes) =>{
       }
     }
   });
-  return user;
+  return User;
 };

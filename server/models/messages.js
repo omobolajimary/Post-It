@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const messages = sequelize.define('messages', {
+  const Messages = sequelize.define('Messages', {
     content: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -11,12 +11,12 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     classMethods: {
       associate: (models) => {
-        messages.belongsTo(models.user, {
+        messages.belongsTo(models.User, {
           foreignKey: 'userId',
           onDelete: 'CASCADE',
         });
       },
     },
   });
-  return messages;
+  return Messages;
 };
