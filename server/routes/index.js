@@ -8,6 +8,6 @@ module.exports = (app) => {
   }));
 
   
-router.post('/api/user/signup',userController.signup);
+// router.post('/api/user/signup',userController.signup);
 
 };

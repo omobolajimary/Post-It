@@ -6,18 +6,18 @@ const path = require('path');
 const app = express();
 var index = require('./server/routes/index');
 var users = require('./server/routes/users');
-var postIt = require('./server/routes/postIt');  //Import routes for "catalog" area of site
+  //Import routes for "catalog" area of site
 // Log requests to the console.
 app.use(logger('dev'));
 
 // Parse incoming requests data (https://github.com/expressjs/body-parser)
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.set('template', path.join(__dirname, 'template'));
-app.use(express.static('static'));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.set('template', path.join(__dirname, 'template'));
+// app.use(express.static('static'));
 app.use('/', index);
-app.use('/users', users);
-app.use('/postIt', postIt); 
+// app.use('/api/users', users);
+ 
 
 
 // Setup a default catch-all route that sends back a welcome message in JSON format.
