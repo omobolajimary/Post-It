@@ -1,14 +1,12 @@
-html{
-   
-}
+
 .navbar-form input, .form-inline input {
   width:auto;
 }
 
 .container{
-    margin-left: 115px;
+    margin-left: 110px;
     margin-top: 0px;
-    padding-bottom: 50px;
+    padding-bottom: 200px;
     background-color: #f9fbe7;
 }
 .signup{
@@ -20,16 +18,8 @@ nav{
     text-align: inherit;
     padding:10px;
     box-sizing: border-box;
-    color:
-}
-h3{
-     color: ;
-
-}
+    }
 h1{
     margin-left: 115px;
     margin-top: 20px;
-}
-body.h1{
-    
 }
