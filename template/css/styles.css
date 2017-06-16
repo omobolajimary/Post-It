@@ -11,6 +11,9 @@ html{
     padding-bottom: 50px;
     background-color: #f9fbe7;
 }
+.signup{
+    float:right;
+}
 nav{
     background-color: #c6c8b5;
     margin-bottom: 0px;

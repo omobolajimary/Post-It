@@ -1,5 +1,5 @@
 const User = require('../models/user');
-
+let signup;
 module.exports={
 
     signup: (req,res,next) => {
