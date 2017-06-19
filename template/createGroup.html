@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--Metas-->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Create Group</title>
+	<meta name="description" content="Login">
+  <link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+	<header>
+        <div site>
+			<nav class="nav-bar"> 
+                <ul class="group">
+                    <li><a href="/">Home</a></li>
+                    <li style="float:right"><a href="signup">Sign Up</a></li>						
+                </ul>
+			</nav>
+		</div>
+	</header>
+	<div class = "container">
+		<div class = "row">
+			<div class = "col-md-4">
+			</div>
+			<div id="login" class = "col-md-4"></br>
+			<h1> Create Group</h1>
+				<form action="/createGroup" method="post">
+					<fieldset>
+						<div class="form-group">
+							<label for=""><h3>Group Name</h3></label>
+							<input type="text" id ="groupName" class= "form-control"placeholder="groupName" required autocomplete="off">
+                            <input type="text" id ="addUser" class= "form-control"placeholder="addUser" required autocomplete="off">
+						</div>
+						<button onclick="createGroup" class="btn btn-primary btn-lg btn-block">Create Group</button>
+					</fieldset>
+				</form>
+			</div>
+			<div class = "col-md-4">
+			</div>
+		</div>
+	</div>
+<script src=""></script>
+</body>
+
+</html>

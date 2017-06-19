@@ -1,0 +1,46 @@
+<<<<<<< .merge_file_a03668
+
+.navbar-form input, .form-inline input {
+  width:auto;
+}
+
+.container{
+    margin-left: 110px;
+    margin-top: 0px;
+    padding-bottom: 200px;
+    background-color: #f9fbe7;
+}
+.signup{
+    float:right;
+}
+nav{
+    background-color: #c6c8b5;
+    margin-bottom: 0px;
+    text-align: inherit;
+    padding:10px;
+    box-sizing: border-box;
+    }
+h1{
+    margin-left: 115px;
+    margin-top: 20px;
+}
+=======
+.container{
+    background-color: ;
+    margin-left: 115px;
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+h3{
+     color: ;
+
+}
+h1{
+    margin-left: 115px;
+    margin-top: 30px;
+}
+body.h1{
+    
+}
+>>>>>>> .merge_file_a08388
