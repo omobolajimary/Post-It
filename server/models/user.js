@@ -1,16 +1,14 @@
-
 module.exports = (sequelize, DataTypes) => {
   const user = sequelize.define('user', {
-    userName: {
-      type: DataTypes.STRING,
-      email: DataTypes.STRING,
-      password: DataTypes.STRING,
-      allowNull:false
-    },
+    email: DataTypes.STRING,
+    username: DataTypes.STRING,
+    password: DataTypes.STRING
   }, {
     classMethods: {
-      associate: function(models) {
-        // associations can be defined here
+      associate: (models) => {
+        user.hasMany(models.Message, {foreignKey: 'user_id'});
+
+        // User.hasMany(models.Group_member, {foreignKey: 'user_id'});
       }
     }
   });
