@@ -1,5 +1,5 @@
 {
-  "name": "Post-It",
+  "name": "postit",
   "version": "1.0.0",
   "description": "PostIt is a simple application that allows friends and colleagues create groups for notifications. This way one person can post notifications to everyone by sending a message once. The application allows people create accounts, create groups and add registered users to the groups, and then send messages out to these groups whenever they want.",
   "main": "index.js",
@@ -21,12 +21,15 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
+    "jsonwebtoken": "^7.4.1",
     "morgan": "^1.8.2",
     "pg": "^6.2.4",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.1.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.5.2",
     "nodemon": "^1.11.0",
     "sequelize-cli": "^2.7.0"
   }

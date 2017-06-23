@@ -1,7 +1,9 @@
 const user = require("../models").user;
-const bcrypt = require('bcrypt');
+const group = require("../models").group;
+const bcrypt = require("bcrypt");
 const salt = bcrypt.genSaltSync(10);
-const hash = bcrypt.hashSync('my password', salt);
+const hash = bcrypt.hashSync("my password", salt);
+const jwt = require("jsonwebtoken");
   module.exports = {
     signup(req, res) {
       if(req.body.userName === ""){
@@ -37,5 +39,59 @@ const hash = bcrypt.hashSync('my password', salt);
         });
       }
     });
+    },
+    login (req, res) {
+      user.findOne({
+        where: {
+          userName: req.body.userName,
+        },
+      })
+      .then((User,err) => {
+        if(!User){
+          res.status(404).send({ status: false, message:'Authentication failed. User not found'});
+          }
+        else if(User){
+          if(bcrypt.compareSync(req.body.password, User.password)){
+            const token = jwt.sign({
+                  data: User
+                }, 'secret', { expiresIn: "1440" });
+            res.status(200).send({ status: true, message:'Authentication Successful', token: token});
+          }else{
+            res.status(401).send({ status: false, message:'Authentication failed. Incorrect Password'});
+          }
+        }
+      })
+    },
+  createGroup(req,res) {
+    if(req.body.groupName === ""){
+      res.json({message:"Group Name is required"})
     }
+    group.findOne({
+      where: {
+        groupName: req.body.groupName,
+      },
+    })
+    .then((Groupname) =>{
+      if(Groupname){
+        res.status(400).send({status:false, message:'Group Name already exist'});
+      }
+      else{
+        const userId = req.decoded.data.id;
+        group.create({
+          groupName:req.body.groupName,
+          userId:userId
+        })
+        .then((Groupname) =>{
+          res.status(200).send({ status: true, message:'Successful', data: groupName});
+        });
+      }
+    })
+  }
+
+
+  //npm install --save jsonwebtoken
+
+
+
+
   }
