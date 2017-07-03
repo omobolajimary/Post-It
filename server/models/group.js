@@ -1,14 +1,11 @@
 
 module.exports = (sequelize, DataTypes)=> {
   const group = sequelize.define('group', {
-    groupName:{
-    type:DataTypes.STRING,
+    groupName:DataTypes.STRING,
     userId: DataTypes.INTEGER,
-    allowNull: false,
-    },
   }, {
     classMethods: {
-      associate: function(models) {
+      associate: (models) => {
         // associations can be defined here
       }
     }

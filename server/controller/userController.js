@@ -40,7 +40,7 @@ const jwt = require("jsonwebtoken");
       }
     });
     },
-    login (req, res) {
+    signin(req, res) {
       user.findOne({
         where: {
           userName: req.body.userName,
@@ -66,6 +66,7 @@ const jwt = require("jsonwebtoken");
     if(req.body.groupName === ""){
       res.json({message:"Group Name is required"})
     }
+    const user_Id = req.params.userId;
     group.findOne({
       where: {
         groupName: req.body.groupName,
@@ -75,18 +76,15 @@ const jwt = require("jsonwebtoken");
       if(Groupname){
         res.status(400).send({status:false, message:'Group Name already exist'});
       }
-      else{
-        const userId = req.decoded.data.id;
-        group.create({
-          groupName:req.body.groupName,
-          userId:userId
-        })
-        .then((Groupname) =>{
-          res.status(200).send({ status: true, message:'Successful', data: groupName});
-        });
-      }
+      group.create({
+        groupName : req.body.groupName,
+        userId : user_Id
+      })
+      .then((group) =>{
+        res.status(200).send({ status: true, message:'Successful', data:group});
+      });
     })
-  }
+  },
 
 
   //npm install --save jsonwebtoken
